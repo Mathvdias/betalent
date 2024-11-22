@@ -12,6 +12,7 @@ class BeTalentApp extends StatelessWidget {
       theme: AppTheme.theme,
       initialRoute: AppRouter.splashRoute,
       onGenerateRoute: AppRouter.generateRoute,
+      debugShowCheckedModeBanner: false,
     );
   }
 }
