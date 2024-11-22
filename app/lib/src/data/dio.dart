@@ -9,7 +9,8 @@ class DioFactoryImpl implements IDioFactory {
   Dio create() {
     final dio = Dio(
       BaseOptions(
-        baseUrl: 'http://localhost:8080',
+        ///[Base local para server em emulador] - baseUrl: 'http://localhost:8080',
+        baseUrl: 'http://192.168.15.52:8080',
         connectTimeout: const Duration(milliseconds: 5000),
         receiveTimeout: const Duration(milliseconds: 3000),
         headers: {

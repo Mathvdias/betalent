@@ -3,6 +3,6 @@ import 'package:app/src/di/di.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  setupLocator();
+  di();
   runApp(const BeTalentApp());
 }
