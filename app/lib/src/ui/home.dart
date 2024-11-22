@@ -122,6 +122,7 @@ class MyHomePage extends StatelessWidget {
                             ],
                           ),
                         ),
+                        const HeaderEmployee(),
                         Expanded(
                           child: ListView.builder(
                             itemCount: employees.length,
@@ -148,6 +149,56 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
+class HeaderEmployee extends StatelessWidget {
+  const HeaderEmployee({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 12.5),
+      decoration: BoxDecoration(
+        color: AppTheme.headerColor,
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(8.0),
+          topRight: Radius.circular(8.0),
+        ),
+        border: Border.all(
+          color: AppTheme.borderColor,
+          width: 1,
+        ),
+      ),
+      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+      child: Row(
+        children: [
+          const Expanded(
+            child: Text(
+              "Foto",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          const Expanded(
+            flex: 4,
+            child: Text(
+              "Nome",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right: 16.0),
+            child: BeTalentSvg.dot,
+          )
+        ],
+      ),
+    );
+  }
+}
+
 class EmployeeData extends StatelessWidget {
   const EmployeeData({
     super.key,
@@ -158,45 +209,56 @@ class EmployeeData extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ExpansionTile(
-      trailing: BeTalentSvg.arrowDown,
-      leading: CircleAvatar(
-        backgroundColor: Colors.grey[300],
-        child: ClipOval(
-          child: Image.network(
-            employee.image,
-            width: 40,
-            height: 40,
-            fit: BoxFit.cover,
-            loadingBuilder: (context, child, loadingProgress) {
-              if (loadingProgress == null) {
-                return child;
-              } else {
-                return const Icon(Icons.person, color: Colors.white);
-              }
-            },
-            errorBuilder: (context, error, stackTrace) {
-              return const Icon(Icons.error, color: Colors.red);
-            },
-          ),
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 12.5),
+      decoration: const BoxDecoration(
+        border: Border(
+          bottom: BorderSide(color: AppTheme.borderColor),
+          right: BorderSide(color: AppTheme.borderColor),
+          left: BorderSide(color: AppTheme.borderColor),
         ),
       ),
-      title: Text(employee.name),
-      controlAffinity: ListTileControlAffinity.trailing,
-      children: <Widget>[
-        ItemTileData(
-          employeeData: employee.job,
-          label: 'Cargo',
+      child: ExpansionTile(
+        childrenPadding: const EdgeInsets.symmetric(horizontal: 24.0),
+        trailing: BeTalentSvg.arrowDown,
+        leading: CircleAvatar(
+          backgroundColor: Colors.grey[300],
+          child: ClipOval(
+            child: Image.network(
+              employee.image,
+              width: 40,
+              height: 40,
+              fit: BoxFit.cover,
+              loadingBuilder: (context, child, loadingProgress) {
+                if (loadingProgress == null) {
+                  return child;
+                } else {
+                  return const Icon(Icons.person, color: Colors.white);
+                }
+              },
+              errorBuilder: (context, error, stackTrace) {
+                return const Icon(Icons.error, color: Colors.red);
+              },
+            ),
+          ),
         ),
-        ItemTileData(
-          employeeData: employee.admissionDateFormatted,
-          label: 'Data de admissão',
-        ),
-        ItemTileData(
-          employeeData: employee.phoneFormatted,
-          label: 'Telefone',
-        ),
-      ],
+        title: Text(employee.name),
+        controlAffinity: ListTileControlAffinity.trailing,
+        children: <Widget>[
+          ItemTileData(
+            employeeData: employee.job,
+            label: 'Cargo',
+          ),
+          ItemTileData(
+            employeeData: employee.admissionDateFormatted,
+            label: 'Data de admissão',
+          ),
+          ItemTileData(
+            employeeData: employee.phoneFormatted,
+            label: 'Telefone',
+          ),
+        ],
+      ),
     );
   }
 }
@@ -212,21 +274,18 @@ class ItemTileData extends StatelessWidget {
   final String label;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            label,
-            style: Theme.of(context).textTheme.displayLarge?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                ),
-          ),
-          Text(employeeData),
-        ],
-      ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          label,
+          style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+              ),
+        ),
+        Text(employeeData),
+      ],
     );
   }
 }
