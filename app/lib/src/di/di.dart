@@ -7,9 +7,13 @@ import 'package:dio/dio.dart';
 final getIt = GetIt.instance;
 
 void di() {
-  getIt.registerLazySingleton<IDioFactory>(() => DioFactoryImpl());
+  getIt.registerLazySingleton<IDioFactory>(
+    () => DioFactoryImpl(),
+  );
 
-  getIt.registerLazySingleton<Dio>(() => getIt<IDioFactory>().create());
+  getIt.registerLazySingleton<Dio>(
+    () => getIt<IDioFactory>().create(),
+  );
 
   getIt.registerLazySingleton<IHomeRepository>(
     () => HomeRepositoryImpl(
@@ -17,8 +21,9 @@ void di() {
     ),
   );
 
-  // Registro do controller
   getIt.registerLazySingleton<HomeControllerImpl>(
-    () => HomeControllerImpl(repository: getIt<IHomeRepository>()),
+    () => HomeControllerImpl(
+      repository: getIt<IHomeRepository>(),
+    ),
   );
 }
