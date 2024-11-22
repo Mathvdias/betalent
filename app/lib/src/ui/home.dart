@@ -87,8 +87,6 @@ class MyHomePage extends StatelessWidget {
                                           AppTheme.greyColor),
                                       controller: searchController,
                                       hintText: 'Pesquisar',
-                                      onSubmitted: (x) =>
-                                          searchController.clear(),
                                       onChanged: (query) {
                                         searchController.openView();
                                         controller.search(query);
