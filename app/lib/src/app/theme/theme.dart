@@ -8,6 +8,8 @@ class AppTheme {
   static const Color textSecondary = Color(0xFF9E9E9E);
   static const Color borderColor = Color(0xFFDFDFDF);
   static const Color buttonColor = Color(0xFF0500FF);
+  static const Color greyColor = Color(0xFFF5F5F5);
+  static const Color whiteColor = Color(0xFFFFFFFF);
 
   static ThemeData get theme {
     return ThemeData(
@@ -18,7 +20,7 @@ class AppTheme {
       hintColor: textSecondary,
       dividerColor: borderColor,
       appBarTheme: AppBarTheme(
-        backgroundColor: backgroundLight,
+        backgroundColor: whiteColor,
         iconTheme: const IconThemeData(color: textPrimary),
         toolbarTextStyle: const TextTheme(
           titleLarge: TextStyle(color: textPrimary, fontSize: 20),
@@ -69,15 +71,20 @@ final TextTheme _textTheme = TextTheme(
       _baseTextStyle.copyWith(fontSize: 18, fontWeight: FontWeight.w500),
   headlineSmall:
       _baseTextStyle.copyWith(fontSize: 16, fontWeight: FontWeight.w400),
-  titleLarge: _baseTextStyle.copyWith(fontSize: 20, fontWeight: FontWeight.w500),
+  titleLarge:
+      _baseTextStyle.copyWith(fontSize: 20, fontWeight: FontWeight.w500),
   titleMedium:
       _baseTextStyle.copyWith(fontSize: 18, fontWeight: FontWeight.w500),
-  titleSmall: _baseTextStyle.copyWith(fontSize: 16, fontWeight: FontWeight.w500),
+  titleSmall:
+      _baseTextStyle.copyWith(fontSize: 16, fontWeight: FontWeight.w500),
   bodyLarge: _baseTextStyle.copyWith(fontSize: 16, fontWeight: FontWeight.w400),
-  bodyMedium: _baseTextStyle.copyWith(fontSize: 14, fontWeight: FontWeight.w400),
+  bodyMedium:
+      _baseTextStyle.copyWith(fontSize: 14, fontWeight: FontWeight.w400),
   bodySmall: _baseTextStyle.copyWith(fontSize: 12, fontWeight: FontWeight.w400),
-  labelLarge: _baseTextStyle.copyWith(fontSize: 14, fontWeight: FontWeight.w500),
+  labelLarge:
+      _baseTextStyle.copyWith(fontSize: 14, fontWeight: FontWeight.w500),
   labelMedium:
       _baseTextStyle.copyWith(fontSize: 12, fontWeight: FontWeight.w500),
-  labelSmall: _baseTextStyle.copyWith(fontSize: 10, fontWeight: FontWeight.w500),
+  labelSmall:
+      _baseTextStyle.copyWith(fontSize: 10, fontWeight: FontWeight.w500),
 );
