@@ -19,7 +19,7 @@ class HomeRepositoryImpl implements IHomeRepository {
       final List<dynamic> json = response.data;
       return json.map(EmployeeAdapter.fromJson).toList();
     } on DioException catch (e) {
-      throw Exception('Failed to fetch employees: ${e.message}');
+      throw Exception('Falha ao carregar dados: ${e.message}');
     }
   }
 }
