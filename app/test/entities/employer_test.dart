@@ -1,4 +1,4 @@
-import 'package:app/src/entities/employer.dart';
+import 'package:app/src/data/entities/employer.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -13,19 +13,19 @@ void main() {
           "https://img.favpng.com/25/7/23/computer-icons-user-profile-avatar-image-png-favpng-LFqDyLRhe3PBXM0sx2LufsGFU.jpg"
     };
     test('should correctly format phone number', () {
-      final employer = EmployerAdapter.fromJson(employerJson);
+      final employer = EmployeeAdapter.fromJson(employerJson);
 
       expect(employer.phoneFormatted, '+55 (51) 23456-7890');
     });
 
     test('should correctly format admission date', () {
-      final employer = EmployerAdapter.fromJson(employerJson);
+      final employer = EmployeeAdapter.fromJson(employerJson);
 
       expect(employer.admissionDateFormatted, '02/12/2019');
     });
 
     test('should create Employer from JSON correctly', () {
-      final employer = EmployerAdapter.fromJson(employerJson);
+      final employer = EmployeeAdapter.fromJson(employerJson);
 
       expect(employer.id, 1);
       expect(employer.name, 'João');

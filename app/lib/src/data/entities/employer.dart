@@ -1,4 +1,4 @@
-class Employer {
+class Employee {
   final int id;
   final String name;
   final String job;
@@ -6,7 +6,7 @@ class Employer {
   final String phone;
   final String image;
 
-  Employer({
+  Employee({
     required this.id,
     required this.name,
     required this.job,
@@ -27,9 +27,9 @@ class Employer {
   }
 }
 
-class EmployerAdapter {
-  static Employer fromJson(Map<String, dynamic> json) {
-    return Employer(
+class EmployeeAdapter {
+  static Employee fromJson(json) {
+    return Employee(
       id: json['id'] as int,
       name: json['name'] as String,
       job: json['job'] as String,
