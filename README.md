@@ -4,6 +4,7 @@ Este é o repositório do projeto BeTalent, uma aplicação Flutter que integra 
 
 ## Telas
 <div style="display: flex; justify-content: space-between; align-items: center;">
+  <img src="https://github.com/user-attachments/assets/30d7eb94-ae43-4589-8145-015df94d5825" width="30%" />
   <img src="https://github.com/user-attachments/assets/5b9c8f4e-ae42-4d34-ab8d-0e667f991f43" width="30%" />
   <img src="https://github.com/user-attachments/assets/2aaa2953-f2b4-4225-ba0b-7f676c5fea65" width="30%" />
   <img src="https://github.com/user-attachments/assets/f694c572-2446-4cb1-9da7-e74184ceaf4c" width="30%" />
