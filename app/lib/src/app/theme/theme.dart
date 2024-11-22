@@ -10,6 +10,7 @@ class AppTheme {
   static const Color buttonColor = Color(0xFF0500FF);
   static const Color greyColor = Color(0xFFF5F5F5);
   static const Color whiteColor = Color(0xFFFFFFFF);
+  static const Color headerColor = Color(0xFFEDEFFB);
 
   static ThemeData get theme {
     return ThemeData(
